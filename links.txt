@@ -9,3 +9,6 @@ http://tldp.org/HOWTO/html_single/Debian-Binary-Package-Building-HOWTO/
 
 # screen
 http://www4.informatik.uni-erlangen.de/~jnweiger/screen-faq.html
+
+# git
+http://cheat.errtheblog.com/s/git
