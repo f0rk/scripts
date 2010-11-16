@@ -1,0 +1,11 @@
+# general *n?x notes
+http://www.brandonhutchinson.com/
+
+# the unixersal translator
+http://bhami.com/rosetta.html
+
+# build a .deb
+http://tldp.org/HOWTO/html_single/Debian-Binary-Package-Building-HOWTO/
+
+# screen
+http://www4.informatik.uni-erlangen.de/~jnweiger/screen-faq.html
