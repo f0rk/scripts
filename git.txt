@@ -1,0 +1,17 @@
+# undo a commit
+git reset --soft HEAD~1
+
+# undo a commit (losing changes)
+git reset --hard HEAD~1
+
+# undo an already pushed commit
+git revert HEAD
+
+# remove a file from all of your history
+git filter-branch --tree-filter 'rm -f filename' HEAD
+
+# remove a file from the staging area
+git reset HEAD <file>
+
+# rewrite your commit message
+git commit --amend
