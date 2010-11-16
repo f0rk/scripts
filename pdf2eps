@@ -1,0 +1,7 @@
+#!/bin/bash
+
+TARGET=${1%.pdf}.eps
+echo "pdftops -eps ${1} - | ps2eps > ${TARGET}"
+pdftops -eps ${1} - | ps2eps > ${TARGET}
+
+echo "ps2eps stdout redirected to: ${TARGET}"

@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use JSON;
+
+my $json_text = <>;
+
+my $json = JSON->new();
+$json = $json->pretty(1);
+
+print $json->encode($json->decode($json_text));

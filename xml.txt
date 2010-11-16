@@ -1,0 +1,3 @@
+# check the well-formedness of XML
+xmllint --noout /path/to/file.xml
+xmlwf /path/to/file.xml

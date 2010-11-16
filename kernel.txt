@@ -1,0 +1,25 @@
+$ su -
+# cd /tmp
+# wget http://www.kernel.org/pub/linux/kernel/v2.6/linux-x.y.z.tar.bz2
+# tar -xjvf linux-x.y.z.tar.bz2 -C /usr/src
+# cd /usr/src
+# apt-get install gcc binutils-doc gcc-multilib make manpages-dev autoconf automake1.9 libtool flex bison gdb gcc-doc gcc-4.3-multilib libmudflap0-4.3-dev build-essential ncurses-dev initramfs-tools
+# make menuconfig
+# make
+# make modules
+# make modules_install
+# make install
+# cd /boot
+# mkinitramfs -o initrd.img-x.y.z x.y.z
+# vi /boot/grub/menu.lst
+
+	title           Debian GNU/Linux, kernel x.y.z
+	root            (hd0,0)
+	kernel          /boot/vmlinuz-x.y.z root=/dev/hda1 ro quiet
+	initrd          /boot/initrd.img-x.y.z
+
+OR (GRUB2)
+
+# update-grub
+
+# reboot

@@ -1,0 +1,31 @@
+# expand a filename to its full path
+realpath .
+
+# find all files modifed today
+find . -mtime -1 -print
+
+# strip path from filename
+basename /path/to/file
+
+# get only directoy from filename
+dirname /path/to/file
+
+# view filesize (human readable)
+ls -lh /path/to/file
+
+# directory size (human readable)
+du -h .
+
+# disk information
+df -h
+
+# more disk information
+fdisk -l
+
+# identify a file's type
+file /path/to/file
+
+# file checksums
+md5sum /path/to/file # md5
+shasum /path/to/file # sha (use -a to set alg.)
+cksum /path/to/file # crc32

@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use MIME::Base64;
+
+my $text = '';
+while(my $line = <>) {
+    $text .= $line;
+}
+
+print encode_base64($text);

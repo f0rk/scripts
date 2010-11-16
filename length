@@ -1,0 +1,7 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+my $s = "";
+while(my $line = <>) { $s .= $line; }
+print length $s; 

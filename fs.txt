@@ -1,0 +1,9 @@
+# Mount a GPT partition on a machine that doesn't support GPT
+parted /dev/sda
+(parted) unit b
+(parted) print
+# read start location of partition
+(parted) quit
+losetup -o $START /dev/loop0 /dev/sda
+mount -o ro /dev/loop0 /mnt/recover
+

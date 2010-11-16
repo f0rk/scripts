@@ -1,0 +1,23 @@
+# fake RAID (software RAID) discovery
+dmraid -r
+
+# list information about fake RAID set
+dmraid -s asr_
+
+# 3ware (real RAID) information
+tw_cli info
+
+# 3ware set information
+tw_cli /c2 show
+
+# 3ware device information
+tw_cli /c2/p0 show
+
+# degraded fake RAID on boot
+If / becomes degraded the system may not boot without first repairing
+the issue. To reboot you'll need to edit GRUB:
+1. Edit the kernel line from the GRUB menu
+    a) Remove references to dmraid devices (e.g. change /dev/mapper/raidSet1 to /dev/sda1)
+    b) Append disablehooks=dmraid to prevent a kernel panic when dmraid
+       discovers the degraded array
+2. Boot the system

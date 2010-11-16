@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+my $text = '';
+while(my $line = <>) {
+    $text =~ s/^\s+//;
+    $text =~ s/\s+$//;
+    $text .= $line;
+}
+$text =~ s/\s+/ /g;
+print $text;

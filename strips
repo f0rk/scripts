@@ -1,0 +1,7 @@
+#!/usr/bin/perl
+my $text = '';
+while(my $line = <>) {
+    $text .= $line;
+}
+$text =~ s/\s//g;
+print $text;

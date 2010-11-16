@@ -1,0 +1,37 @@
+Scripts and things.
+
+Feel free to use these for whatever use, the license
+is MIT and can be found in this directory (Unless I
+am not the original author).
+
+Files ending with .txt are collections of commands
+about the filename, e.g. ssl.txt has useful commands
+for SSL related activities.
+
+Most of these require various utilities to be installed
+(e.g. Perl) so open a script before you run it to make
+sure you have everything you need.
+
+apt-size - get the size (including deps) of a package
+b64d - decode base64 encoded data (useful in vim)
+b64e - encode base64 encoded data (useful in vim)
+delsvn - delete all svn directories recursively
+files.txt
+jsonf - format json
+length - length of some text (useful in vim)
+mail.pl - send email
+migrate_all_users.pl - copy user files to new machine
+migrate_normal_users.pl - copy normal users to new machine
+raid.txt
+ssl.txt
+stripl - strip left
+stripr - strip right
+strips - strip all spaces
+stripw - replaces multiple spaces with a single space
+uridecode - decode/unescape URL/URI
+uriencode - encode/escape URL/URI
+wiki - read wikipedia stubs
+xml.txt
+
+-------------
+Ryan P. Kelly

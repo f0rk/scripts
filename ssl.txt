@@ -1,0 +1,8 @@
+# view ssl certs
+openssl s_client -showcerts -host $HOST -port $PORT
+
+# view when an SSL cert expires
+echo | openssl s_client -showcerts -host 216.25.194.71 -port 443 | openssl x509 -noout -enddate
+
+# check ssl protocol
+echo | openssl s_client -showcerts -host 216.25.194.71 -port 443 -ssl2
