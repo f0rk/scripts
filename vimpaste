@@ -1,0 +1,25 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use IPC::Open2;
+
+my $comment = defined($ARGV[0]) ? $ARGV[0] : '#';
+my $args = defined($ARGV[1]) ? $ARGV[1] : '';
+
+my $pid = open2(my $reader, my $writer, "nopaste $args");
+
+while(<STDIN>) {
+    print $writer $_;
+    print $_;
+}
+
+close($writer);
+
+while(<$reader>) {
+    print "$comment $_";
+}
+
+close($reader);
+waitpid($pid, 0);
+
