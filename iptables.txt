@@ -1,0 +1,14 @@
+# drop all traffic from a specific IP
+iptables -A INPUT -s 210.19.79.41 -j DROP
+
+# drop all traffic of a specfic type on a specific interface
+iptables -A INPUT -i eth1 -p tcp -j DROP
+
+# drop traffic on given ports
+iptables -A INPUT -p udp --dport !123,5060:5082,10000:20000 -j DROP
+
+# allow only outbound traffic
+iptables -A INPUT -m state --state NEW -j DROP
+
+# allow traffic to a specific port
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
