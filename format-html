@@ -1,0 +1,12 @@
+#!/usr/bin/python
+# uses BeautifulSoup:
+#    http://www.crummy.com/software/BeautifulSoup/
+#    apt-get install python-beautifulsoup
+
+import sys
+from BeautifulSoup import BeautifulSoup
+
+html = sys.stdin.read()
+soup = BeautifulSoup(html)
+print soup.renderContents(None, True, 4)
+
