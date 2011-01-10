@@ -1,0 +1,17 @@
+# add rpmforge repo
+wget http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el5.rf.i386.rpm
+rpm --import http://apt.sw.be/RPM-GPG-KEY.dag.txt
+rpm -K rpmforge-release-0.5.2-2.el5.rf.*.rpm
+rpm -i rpmforge-release-0.5.2-2.el5.rf.*.rpm
+
+# add ELRepo repo
+rpm --import http://elrepo.org/RPM-GPG-KEY-elrepo.org
+rpm -Uvh http://elrepo.org/elrepo-release-5-1.el5.elrepo.noarch.rpm
+
+# list installed packages
+yum list installed
+
+# find where a package came from
+find /var/cache/yum -name package-name*
+# or (newer yum), look for "From repo:"
+yum info package-name
