@@ -2,7 +2,7 @@ $ su -
 # cd /tmp
 # wget http://www.kernel.org/pub/linux/kernel/v2.6/linux-x.y.z.tar.bz2
 # tar -xjvf linux-x.y.z.tar.bz2 -C /usr/src
-# cd /usr/src
+# cd /usr/src/linux-x.y.z
 # apt-get install gcc binutils-doc gcc-multilib make manpages-dev autoconf automake1.9 libtool flex bison gdb gcc-doc gcc-4.3-multilib libmudflap0-4.3-dev build-essential ncurses-dev initramfs-tools
 # make menuconfig
 # make
