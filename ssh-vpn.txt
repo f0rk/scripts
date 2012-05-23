@@ -1,0 +1,27 @@
+# server side
+echo 1 > /proc/sys/net/ipv4/ip_forward
+iptables -t nat -A POSTROUTING -j MASQUERADE
+iptables -A FORWARD -j ACCEPT
+ip tuntap add dev tun0 mode tun user ryan group ryan
+ip link set tun0 up
+ip addr add 10.12.0.1/32 peer 10.12.0.2 dev tun0
+arp -sD 10.12.0.2 eth0 pub
+
+# client (osx) side
+sudo ssh -D 2001 -w0:0 -i /Users/ryan/.ssh/id_rsa ryan@24.187.210.198
+sudo ifconfig tun0 10.12.0.2 10.12.0.1 netmask 0xfffffffc;
+sudo route add 24.187.210.198/32 192.168.1.1;
+sudo route change default 10.12.0.1;
+
+sudo ifconfig tun0 10.12.0.2 10.12.0.1 netmask 0xfffffffc;
+sudo route add 24.187.210.198/32 192.168.2.1;
+sudo route change default 10.12.0.1;
+
+sudo ifconfig tun0 10.12.0.2 10.12.0.1 netmask 0xfffffffc;
+sudo route add 24.187.210.198/32 192.168.3.1;
+sudo route change default 10.12.0.1;
+
+sudo ssh -w1:1 -i /Users/ryan/.ssh/id_tun root@hg.truveris.com
+sudo ifconfig tun1 10.12.1.1 10.12.1.2 netmask 0xfffffffc;
+sudo route add 10.10.0.0/16 10.12.1.2;
+
