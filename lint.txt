@@ -1,0 +1,10 @@
+# python
+pyflakes
+flake8
+https://github.com/chevah/pocket-lint
+
+# css
+https://github.com/chevah/pocket-lint
+
+# js
+jsl
